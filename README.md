@@ -14,7 +14,8 @@ When I saw the challenge proposed in this video, I decided to stop watching the 
 
 --> Uncaught RangeError: Maximum call stack size exceeded
 
-Using a recursive function works great for a small array, but an array larger than 100x20 ends up with a "Maximum call stack size exceeded" error.
+Using a recursive function works great for a small array, but an array that is too large ends up generating a "Maximum call stack size exceeded" error.
+To test the limit of the recursive function I used a 21x100 matrix fully filled with '1', which resulted in 2,100 iterations of the function, whereas with a much larger matrix the non-recursive function had no problem.
 
 # Solution found:
 
