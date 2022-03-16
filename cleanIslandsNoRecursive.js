@@ -32,6 +32,7 @@ function cleanIslandsNoRecursive(data) {
 }
 
 function noRecursive(testY, testX) {
+    counter++;
     const sides = [
         [0,1], [0,-1], [1,0], [-1,0]
     ];
@@ -43,7 +44,6 @@ function noRecursive(testY, testX) {
             return;
         };
         newMatrix[y][x] = character;
-        counter++;
         checkList.push([y,x]);
     });
     return;

@@ -28,6 +28,7 @@ function cleanIslands(data) {
 }
 
 function recursive(testY, testX) {
+    counter++;
     const sides = [
         [0,1], [0,-1], [1,0], [-1,0]
     ];
@@ -39,7 +40,6 @@ function recursive(testY, testX) {
             return;
         };
         newMatrix[y][x] = character;
-        counter++;
         recursive(y, x);
     });
     return;

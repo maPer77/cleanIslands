@@ -1,13 +1,16 @@
+// Generating array filled with 0 and 1 randomly
+data = generateMatrix(200, 100);
 
-data = generateMatrix(200, 100); // max 20, 100 for recursive function
+// For recursive test, generate matrix fully filled with '1', using third parameter true
+// - Max 21,100 for recursive function: cleanIslands
+// - No problem for large values using non-recursive function: cleanIslandsNoRecursive
+// Example: data = generateMatrix(21, 100, true); 
 
 let result;
 console.time('Time');
 
-// for (let index = 0; index < 200; index++) {    // Used for performance test
-    // result = cleanIslands(data);                    // For test recursive
-    result = cleanIslandsNoRecursive(data);         // For test no recursive
-// }
+// result = cleanIslands(data);              // For test recursive
+result = cleanIslandsNoRecursive(data);    // For test no recursive
 
 console.timeEnd('Time');
 console.log('Max recursive counter usage:', counterMax);
@@ -36,17 +39,19 @@ divData.insertAdjacentHTML("beforeend", dataShow);
 
 
 // helper functions to generate the data
-function generateMatrix(x, y) {
+function generateMatrix(x, y, fill = false) {
     for (let index = 0; index < y; index++) {
-        newMatrix = Array( y ).fill( null ).map( ()=> rand(x) );
+        newMatrix = Array( y ).fill( null ).map( ()=> rand(x, fill) );
     }
     return newMatrix;
 }
 
-function rand(x) {
+function rand(x, fill) {
+    let limit = 0.45;
+    if (fill) limit = 0;
     let newLine = [];
     for (let index = 0; index < x; index++) {
-        oneZero = (Math.random() > 0.45) ? 1 : 0;
+        oneZero = (Math.random() > limit) ? 1 : 0;
         newLine.push( oneZero );
     }
     return newLine;
