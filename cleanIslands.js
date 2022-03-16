@@ -20,9 +20,7 @@ function cleanIslands(data) {
                 recursive(indexY, indexX);
                 
                 counterMax = Math.max(counter, counterMax);
-
             }
-            
         });
 
     });
