@@ -19,6 +19,7 @@ Using a recursive function works great for a small array, but an array larger th
 # Solution found:
 
 The solution found was to stop using recursive function and make a stack of values to be checked that feeds itself.
+I noticed a performance increase of about 5%.
 
 I kept the 2 versions for testing and comparisons.
 
