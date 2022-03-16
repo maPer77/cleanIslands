@@ -22,13 +22,13 @@ The solution found was to stop using recursive function and make a stack of valu
 
 I kept the 2 versions for testing and comparisons.
 
-# Recursive function:
+## Recursive function:
 cleanIslands.js
 
 ![image info](./img/recursive1.png)
 ![image info](./img/recursive2.png)
 
-# No recursive function:
+## No recursive function:
 cleanIslandsNoRecursive.js
 
 ![image info](./img/noRecursive1.png)
